@@ -1,4 +1,5 @@
 FROM tomcat
-ADD entrypoint.sh /
+ENV CATALINA_MEMORY="1G"
+ADD entrypoint.sh .
 EXPOSE 8443
-CMD ["/entrypoint.sh"]
+CMD ["entrypoint.sh"]

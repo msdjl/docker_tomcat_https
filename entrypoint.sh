@@ -14,10 +14,6 @@ EOF
 sed -i '/<Service name="Catalina">/r tmpsslconfig.tmp' ${CATALINA_HOME}/conf/server.xml
 
 # configure max allowed memory
-if [ -z $CATALINA_MEMORY ]; then
-CATALINA_MEMORY="1G"
-fi
-
 echo "export JAVA_OPTS=\"-Xmx${CATALINA_MEMORY}\"" > ${CATALINA_HOME}/bin/setenv.sh
 
 #placeholder#
