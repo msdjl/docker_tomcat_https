@@ -16,6 +16,9 @@ sed -i '/<Service name="Catalina">/r tmpsslconfig.tmp' ${CATALINA_HOME}/conf/ser
 # configure max allowed memory
 echo "export JAVA_OPTS=\"-Xmx${CATALINA_MEMORY}\"" > ${CATALINA_HOME}/bin/setenv.sh
 
+# copy additional apps from /webapps volume to ${CATALINA_HOME}/webapps
+cp -r /webapps/* ${CATALINA_HOME}/webapps/
+
 #placeholder#
 
 # run tomcat
